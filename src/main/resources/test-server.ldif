@@ -1,0 +1,51 @@
+dn: dc=pluralsight,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: pluralsight
+
+dn: ou=groups,dc=pluralsight,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=subgroups,ou=groups,dc=pluralsight,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: subgroups
+
+dn: ou=people,dc=pluralsight,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=bhavik,ou=people,dc=pluralsight,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Bhavik Ravani
+sn: Ravani
+uid: bhavik
+userPassword: $2a$10$tnANadqu2LI/R59FLljv4.yoofEzWLue8WN1wjActSlHPPfbLgG3q
+
+dn: cn=developers,ou=groups,dc=pluralsight,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: developers
+ou: developer
+uniqueMember: uid=bhavik,ou=people,dc=pluralsight,dc=com
+
+dn: cn=managers,ou=groups,dc=pluralsight,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: managers
+ou: manager
+uniqueMember: uid=bhavik,ou=people,dc=pluralsight,dc=com
+
+dn: cn=submanagers,ou=subgroups,ou=groups,dc=pluralsight,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: submanagers
+ou: submanager
+uniqueMember: uid=bhavik,ou=people,dc=pluralsight,dc=com
